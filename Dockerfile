@@ -5,18 +5,16 @@ FROM node:alpine as builder
 # Create app directory
 WORKDIR /usr/src/app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
+# copy react app to work dir
 COPY demo-app/*.json ./
 COPY demo-app/*.lock ./
 COPY demo-app/public ./public
 COPY demo-app/src ./src
 
-# Build for non-prod
-RUN npm install 
+# Install dependencies
+RUN npm install --production
 
-#Build the project for production
+# Run the build
 RUN npm run build 
 
 # --------------------------
