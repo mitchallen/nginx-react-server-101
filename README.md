@@ -19,8 +19,8 @@ This example runs the server locally on port 1280.
 ### Rerun with the same or a new container
 
 ```
-docker stop nginx-server
-docker rm nginx-server
+docker stop nginx-react-server
+docker rm nginx-react-server
 docker run -p 1290:80 --name nginx-server mitchallen/nginx-react-server
 ```
 
@@ -63,8 +63,8 @@ Each server should have a unique set of values.
 
 #### Remove Container
 
-    docker stop nginx-server
-    docker rm nginx-server
+    docker stop nginx-react-server
+    docker rm nginx-react-server
 
 ### Remove Image
 
